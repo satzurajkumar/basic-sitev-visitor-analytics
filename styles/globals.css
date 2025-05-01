@@ -45,3 +45,54 @@ a {
 	font-size: 0.9em;
 	word-break: break-all; /* Prevent overflow */
 }
+
+/* styles/globals.css */
+/* ... (previous styles) ... */
+
+.analytics-container {
+	margin-top: 2rem;
+	padding: 1rem;
+	border: 1px solid #eee;
+	border-radius: 8px;
+	width: 100%; /* Ensure container takes available width */
+	max-width: 800px; /* Optional: Limit max width */
+}
+
+.analytics-container h2,
+.analytics-container h3 {
+	margin-top: 0;
+	margin-bottom: 0.8rem;
+}
+
+.analytics-container ul {
+	list-style: none;
+	padding: 0;
+	margin: 0; /* Remove default ul margin */
+}
+
+.visit-item {
+	/* Styling for each list item */
+	background-color: #f9f9f9;
+	padding: 1rem; /* Increased padding */
+	margin-bottom: 1rem; /* Increased space between items */
+	border-radius: 4px;
+	border: 1px solid #eee; /* Optional border */
+	word-break: break-word; /* Use break-word which is often preferred over break-all */
+}
+
+.visit-item p {
+	/* Styling for paragraphs within list items */
+	margin: 0.4rem 0; /* Add some space between lines */
+	font-size: 0.9em;
+	line-height: 1.4;
+}
+
+.visit-item p:first-child {
+	margin-top: 0;
+}
+
+.visit-item p:last-child {
+	margin-bottom: 0;
+}
+
+/* Add more styles as needed */

@@ -35,23 +35,37 @@ const AnalyticsDisplay: React.FC<AnalyticsDisplayProps> = ({
 			<p>
 				Total Visits: <strong>{data.totalVisits}</strong>
 			</p>
-
-			<h3>Recent Visits</h3>
+			<h3>Recent Visits ({data.recentVisits.length} shown)</h3>{" "}
+			{/* Indicate number shown */}
 			{data.recentVisits.length === 0 ? (
 				<p>No recent visits recorded yet.</p>
 			) : (
 				<ul>
 					{data.recentVisits.map((visit, index) => (
-						<li key={index}>
-							Page: {visit.page}, Time:{" "}
-							{new Date(visit.timestamp).toLocaleString()}, Browser:{" "}
-							{visit.userAgent.split(" ")[0]}...
-							{/* Basic parsing of User Agent - needs more robust handling */}
+						// Updated structure for better readability
+						<li key={index} className="visit-item">
+							{" "}
+							{/* Added a class for potential specific styling */}
+							<p>
+								<strong>Page:</strong> {visit.page}
+							</p>
+							<p>
+								<strong>Time:</strong>{" "}
+								{new Date(visit.timestamp).toLocaleDateString()} -{" "}
+								{new Date(visit.timestamp).toLocaleTimeString()}
+							</p>
+							<p>
+								<strong>Browser Info:</strong> {visit.userAgent}{" "}
+								{/* Displaying full for detail, consider truncating */}
+							</p>
+							{/* Optional: Truncated Browser Info */}
+							{/* <p>
+                <strong>Browser (partial):</strong> {visit.userAgent.split(' ')[0]}...
+              </p> */}
 						</li>
 					))}
 				</ul>
 			)}
-
 			{/* Add more analytics displays here */}
 		</div>
 	);
