@@ -1,7 +1,7 @@
 // components/AnalyticsDisplay.tsx
 import React from "react";
 import { AnalyticsData } from "../pages/api/get-analytics"; // Import the type
-import { VisitData } from "../server/types"; // Import the type
+// import { VisitData } from "../server/types"; // Import the type
 
 interface AnalyticsDisplayProps {
 	data: AnalyticsData | null;
